@@ -8,22 +8,22 @@ from os.path import exists
 
 script, from_file, to_file = argv
 
-print(f"Copying from {from_file} to {to_file}")
+print(f"{from_file} 에서 {to_file} 로 복사합니다")
 
-# we could do these two on one line, how?
+# 이 두 줄은 한 줄로도 쓸 수 있습니다. 어떻게 할까요?
 in_file = open(from_file)
 indata = in_file.read()
 
-print(f"The input file is {len(indata)} bytes long")
+print(f"입력 파일은 {len(indata)}바이트입니다")
 
-print(f"Does the output file exist? {exists(to_file)}")
-print("Ready, hit RETURN to continue, CTRL-C to abort.")
+print(f"출력 파일이 존재하나요? {exists(to_file)}")
+print("준비되었습니다. 계속하려면 리턴을, 취소하려면 CTRL-C를 누르세요.")
 input()
 
 out_file = open(to_file, 'w')
 out_file.write(indata)
 
-print("Alright, all done.")
+print("좋습니다. 모두 완료되었습니다.")
 
 out_file.close()
 in_file.close()

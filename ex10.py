@@ -1,12 +1,12 @@
-tabby_cat = "\tI'm tabbed in."
-persian_cat = "I'm split\non a line."
-backslash_cat = "I'm \\ a \\ cat."
+tabby_cat = "\t난 탭이 됨."
+persian_cat = "나는\n분리됨."
+backslash_cat = "나는 \\ 고 \\ 양이."
 
 fat_cat = """
-I'll do a list:
-\t* Cat food
-\t* Fishies
-\t* Catnip\n\t* Grass
+할 일 목록:
+\t* 고양이 밥
+\t* 물고기
+\t* 개박하\n\t* 오리새
 """
 
 print(tabby_cat)
