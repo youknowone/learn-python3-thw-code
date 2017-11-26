@@ -8,10 +8,9 @@ carpool_capacity = cars_driven * space_in_a_car
 average_passengers_per_car = passengers / cars_driven
 
 
-print("There are", cars, "cars available.")
-print("There are only", drivers, "drivers available.")
-print("There will be", cars_not_driven, "empty cars today.")
-print("We can transport", carpool_capacity, "people today.")
-print("We have", passengers, "to carpool today.")
-print("We need to put about", average_passengers_per_car, "in each car.")
-
+print("자동차", cars, "대가 있습니다.")
+print("운전자는", drivers, "명 뿐입니다.")
+print("오늘은 빈 차가", cars_not_driven, "대일 것입니다.")
+print("오늘은", carpool_capacity, "명을 태울 수 있습니다.")
+print("함께 탈 사람은", passengers, "명 있습니다.")
+print("차마다", average_passengers_per_car, "명 정도씩 타야합니다.")
