@@ -1,27 +1,27 @@
 # left out assignment for types_of_people mentioned in intro
 types_of_people = 10
 # change variable from 10 to types_of_people
-x = f"There are {types_of_people} types of people."
+x = f"세상에는 {types_of_people} 종류의 사람이 있어요."
 
-binary = "binary"
-do_not = "don't"
-y = f"Those who know {binary} and those who {do_not}."
+binary = "'이진수'"
+do_not = "모르는"
+y = f"{binary}를 아는 사람과 {do_not} 사람."
 
 print(x)
 print(y)
 
 # left out f in front of string and omit extra period
-print(f"I said: {x}")
+print(f"'{x}'라고 했어요.")
 # left out f in front of string and omit extra period
-print(f"I also said: '{y}'")
+print(f"'{y}'이라고도 했죠.")
 
 hilarious = False
-joke_evaluation = "Isn't that joke so funny?! {}"
+joke_evaluation = "웃기는 농담 아니에요?! {}"
 
 print(joke_evaluation.format(hilarious))
 
-w = "This is the left side of..."
-e = "a string with a right side."
+w = "이 문자열의 왼쪽 ->"
+e = "<- 이 문자열의 오른쪽"
 
 print(w + e)
 
