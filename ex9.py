@@ -1,16 +1,14 @@
-# Here's some new strange stuff, remember type it exactly.
+# 처음 보는 낯선 내용이 있으니, 정확히 입력하도록 주의하세요.
 
-days = "Mon Tue Wed Thu Fri Sat Sun"
-months = "Jan\nFeb\nMar\nApr\nMay\nJun\nJul\nAug"
+days = "월 화 수 목 금 토 일"
+months = "1월\n2월\n3월\n4월\n5월\n6월\n7월\n8월"
 
-print("Here are the days: ", days)
-print("Here are the months: ", months)
+print("요일 목록: ", days)
+print("달 목록: ", months)
 
 print("""
-There's something going on here.
-With the three double-quotes.
-We'll be able to type as much as we like.
-Even 4 lines if we want, or 5, or 6.
+여기 무언가가 있어요.
+세 겹따옴표 안에요.
+쓰고 싶은만큼 쓸 수 있어요.
+4줄이든, 5줄이든, 6줄이든 원하는 만큼.
 """)
-
-
