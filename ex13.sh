@@ -1,9 +1,9 @@
 ### @export "first"
-python3.6 ex13.py first 2nd 3rd
+python3.6 ex13.py 첫번째 2번 3번
 ### @export "others"
-python3.6 ex13.py stuff things that
+python3.6 ex13.py 이것 저것 그것
 
-python3.6 ex13.py apple orange grapefruit
+python3.6 ex13.py 사과 귤 포도
 
 ### @export "error"
-python3.6 ex13.py first 2nd
+python3.6 ex13.py 첫번째 2번
