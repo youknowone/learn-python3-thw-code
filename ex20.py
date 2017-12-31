@@ -1,35 +1,33 @@
 from sys import argv
 
-script, input_file = argv
+스크립트, 입력_파일 = argv
 
-def print_all(f):
-    print(f.read())
+def 모두_출력(파일):
+    print(파일.read())
 
-def rewind(f):
-    f.seek(0)
+def 되감기(파일):
+    파일.seek(0)
 
-def print_a_line(line_count, f):
-    print(line_count, f.readline())
+def 한_줄_출력(줄_수, 파일):
+    print(줄_수, 파일.readline())
 
-current_file = open(input_file)
+현재_파일 = open(입력_파일)
 
-print("First let's print the whole file:\n")
+print("파일 전체를 출력해 봅시다.\n")
 
-print_all(current_file)
+모두_출력(현재_파일)
 
-print("Now let's rewind, kind of like a tape.")
+print("이번에는 테이프처럼 되감아 봅시다.")
 
-rewind(current_file)
+되감기(현재_파일)
 
-print("Let's print three lines:")
+print("세 줄을 출력해 봅시다.")
 
-current_line = 1
-print_a_line(current_line, current_file)
+현재_줄_수 = 1
+한_줄_출력(현재_줄_수, 현재_파일)
 
-current_line = current_line + 1
-print_a_line(current_line, current_file)
+현재_줄_수 = 현재_줄_수 + 1
+한_줄_출력(현재_줄_수, 현재_파일)
 
-current_line = current_line + 1
-print_a_line(current_line, current_file)
-
-
+현재_줄_수 = 현재_줄_수 + 1
+한_줄_출력(현재_줄_수, 현재_파일)
