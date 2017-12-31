@@ -1,26 +1,25 @@
 
-def cheese_and_crackers(cheese_count, boxes_of_crackers):
-    print(f"You have {cheese_count} cheeses!")
-    print(f"You have {boxes_of_crackers} boxes of crackers!")
-    print("Man that's enough for a party!")
-    print("Get a blanket.\n")
+def 치즈와_크래커(치즈_수, 크래커_상자):
+    print(f"치즈가 {치즈_수}개 있어요!")
+    print(f"크래커가 {크래커_상자} 상자 있어요!")
+    print("파티 벌이기에 충분하네요!")
+    print("담요 한 장 가져오세요.\n")
 
 
-print("We can just give the function numbers directly:")
-cheese_and_crackers(20, 30)
+print("함수에 숫자를 바로 넣어줄 수 있습니다.")
+치즈와_크래커(20, 30)
 
 
-print("OR, we can use variables from our script:")
-amount_of_cheese = 10
-amount_of_crackers = 50
+print("스크립트의 변수를 쓸 수도 있구요.")
+치즈의_양 = 10
+크래커의_양 = 50
 
-cheese_and_crackers(amount_of_cheese, amount_of_crackers)
-
-
-print("We can even do math inside too:")
-cheese_and_crackers(10 + 20, 5 + 6)
+치즈와_크래커(치즈의_양, 크래커의_양)
 
 
-print("And we can combine the two, variables and math:")
-cheese_and_crackers(amount_of_cheese + 100, amount_of_crackers + 1000)
+print("안에서 계산을 해도 됩니다.")
+치즈와_크래커(10 + 20, 5 + 6)
 
+
+print("합쳐서 변수도 쓰고 계산도 할 수도 있습니다.")
+치즈와_크래커(치즈의_양 + 100, 크래커의_양 + 1000)

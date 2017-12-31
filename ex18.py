@@ -1,25 +1,23 @@
 
-# this one is like your scripts with argv
-def print_two(*args):
-    arg1, arg2 = args
-    print(f"arg1: {arg1}, arg2: {arg2}")
+# argv를 쓴 스크립트와 비슷한 함수
+def 둘_출력(*args):
+    실행인자1, 실행인자2 = args
+    print(f"실행인자1: {실행인자1}, 실행인자2: {실행인자2}")
 
-# ok, that *args is actually pointless, we can just do this
-def print_two_again(arg1, arg2):
-    print(f"arg1: {arg1}, arg2: {arg2}")
+# 좋아요. 사실 *args는 필요가 없습니다. 그냥 이렇게 하죠.
+def 둘_출력_다르게(실행인자1, 실행인자2):
+    print(f"실행인자1: {실행인자1}, 실행인자2: {실행인자2}")
 
-# this just takes one argument
-def print_one(arg1):
-    print(f"arg1: {arg1}")
+# 이 함수는 실행인자를 하나만 받습니다
+def 하나_출력(실행인자1):
+    print(f"실행인자1: {실행인자1}")
 
-# this one takes no arguments
-def print_none():
-    print("I got nothin'.")
-
-
-print_two("Zed","Shaw")
-print_two_again("Zed","Shaw")
-print_one("First!")
-print_none()
+# 이 함수는 실행인자를 하나도 받지 않습니다
+def 안_출력():
+    print("아무것도 받지 않음")
 
 
+둘_출력('제드', '쇼')
+둘_출력_다르게('제드', '쇼')
+하나_출력('하나!')
+안_출력()
