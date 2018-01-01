@@ -1,36 +1,34 @@
 
-def add(a, b):
-    print(f"ADDING {a} + {b}")
+def 더하기(a, b):
+    print(f"덧셈 {a} + {b}")
     return a + b
 
-def subtract(a, b):
-    print(f"SUBTRACTING {a} - {b}")
+def 빼기(a, b):
+    print(f"뺄셈 {a} - {b}")
     return a - b
 
-def multiply(a, b):
-    print(f"MULTIPLYING {a} * {b}")
+def 곱하기(a, b):
+    print(f"곱셈 {a} * {b}")
     return a * b
 
-def divide(a, b):
-    print(f"DIVIDING {a} / {b}")
+def 나누기(a, b):
+    print(f"나눗셈 {a} / {b}")
     return a / b
 
 
-print("Let's do some math with just functions!")
+print("함수만으로 계산해 봅시다!")
 
-age = add(30, 5)
-height = subtract(78, 4)
-weight = multiply(90, 2)
-iq = divide(100, 2)
+나이 = 더하기(30, 5)
+키 = 빼기(78, 4)
+몸무게 = 곱하기(90, 2)
+아이큐 = 나누기(100, 2)
 
-print(f"Age: {age}, Height: {height}, Weight: {weight}, IQ: {iq}")
-
-
-# A puzzle for the extra credit, type it in anyway.
-print("Here is a puzzle.")
-
-what = add(age, subtract(height, multiply(weight, divide(iq, 2))))
-
-print("That becomes: ", what, "Can you do it by hand?")
+print(f"나이: {나이}, 키: {키}, 몸무게: {몸무게}, IQ: {아이큐}")
 
 
+# 추가 점수 문제. 아무렇게나 쓰세요.
+print("문제를 하나 드릴게요.")
+
+값 = 더하기(나이, 빼기(키, 곱하기(몸무게, 나누기(아이큐, 2))))
+
+print("결과: ", 값, "손으로 계산할 수 있나요?")
