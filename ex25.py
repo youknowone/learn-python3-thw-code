@@ -1,38 +1,36 @@
 
-def break_words(stuff):
-    """This function will break up words for us."""
-    words = stuff.split(' ')
-    return words
+def 단어_쪼개기(값):
+    """문자열을 단어 단위로 쪼개 줍니다"""
+    단어들 = 값.split(' ')
+    return 단어들
 
-def sort_words(words):
-    """Sorts the words."""
-    return sorted(words)
+def 단어_정렬(단어들):
+    """단어를 정렬합니다"""
+    return sorted(단어들)
 
-def print_first_word(words):
-    """Prints the first word after popping it off."""
-    word = words.pop(0)
-    print(word)
+def 첫_단어_출력(단어들):
+    """첫 단어를 꺼내고 출력합니다."""
+    단어 = 단어들.pop(0)
+    print(단어)
 
-def print_last_word(words):
-    """Prints the last word after popping it off."""
-    word = words.pop(-1)
-    print(word)
+def 마지막_단어_출력(단어들):
+   """마지막 단어를 꺼내고 출력합니다."""
+   단어 = 단어들.pop(-1)
+   print(단어)
 
-def sort_sentence(sentence):
-    """Takes in a full sentence and returns the sorted words."""
-    words = break_words(sentence)
-    return sort_words(words)
+def 문장_정렬(문장):
+    """한 문장을 통째로 받아 정렬된 단어를 반환합니다."""
+    단어들 = 단어_쪼개기(문장)
+    return 단어_정렬(단어들)
 
-def print_first_and_last(sentence):
-    """Prints the first and last words of the sentence."""
-    words = break_words(sentence)
-    print_first_word(words)
-    print_last_word(words)
+def 처음과_마지막_단어_출력(문장):
+    """문장의 처음과 마지막 단어를 출력합니다."""
+    단어들 = 단어_쪼개기(문장)
+    첫_단어_출력(단어들)
+    마지막_단어_출력(단어들)
 
-def print_first_and_last_sorted(sentence):
-    """Sorts the words then prints the first and last one."""
-    words = sort_sentence(sentence)
-    print_first_word(words)
-    print_last_word(words)
-
-
+def 정렬_후_처음과_마지막_단어_출력(문장):
+    """단어를 정렬하고 처음과 마지막 단어를 출력합니다."""
+    단어들 = 문장_정렬(문장)
+    첫_단어_출력(단어들)
+    마지막_단어_출력(단어들)
