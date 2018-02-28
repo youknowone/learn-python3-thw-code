@@ -10,33 +10,33 @@ input, input = fake_input.create([
 print("""문이 두 개 있는 어두운 방에 들어왔습니다.
 1번과 2번 중 어느 방으로 들어갈까요?""")
 
-문 = input("> ")
+door = input("> ")
 
-if 문 == "1":
+if door == "1":
     print("거대 곰이 치즈 케이크를 먹고 있습니다.")
     print("무엇을 할까요?")
     print("1. 케이크를 뺏는다.")
     print("2. 곰에게 소리를 지른다.")
 
-    곰 = input("> ")
+    bear = input("> ")
 
-    if 곰 == "1":
+    if bear == "1":
         print("곰이 당신의 머리를 먹어치웁니다. 잘 했어요!")
-    elif 곰 == "2":
+    elif bear == "2":
         print("곰이 당신의 다리를 먹어치웁니다. 잘 했어요!")
     else:
-        print(f"음, {곰} 행동을 하는 것이 더 나았나보네요.")
+        print(f"음, {bear} 행동을 하는 것이 더 나았나보네요.")
         print("곰이 도망갑니다.")
 
-elif 문 == "2":
+elif door == "2":
     print("당신은 크툴루 눈동자의 끝없는 심연을 쳐다봅니다.")
     print("1. 블루베리.")
     print("2. 노란 재킷 빨래집게.")
     print("3. 권총이 울부짖는 가락 이해하기.")
 
-    광기 = input("> ")
+    insanity = input("> ")
 
-    if 광기 == "1" or 광기 == "2":
+    if insanity == "1" or insanity == "2":
         print("당신의 육체는 젤리푸딩의 마음의 힘으로 살아남습니다.")
         print("잘 했어요!")
     else:
