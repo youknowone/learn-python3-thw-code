@@ -1,4 +1,4 @@
-## Animal is-a object (yes, sort of confusing) look at the extra credit
+## Animal 은 object의 일종(is-a)이다 (네, 조금 헷갈리죠) look at the extra credit
 class Animal(object):
     pass
 
@@ -23,14 +23,14 @@ class Person(object):
         ## ??
         self.name = name
 
-        ## Person has-a pet of some kind
+        ## Person은 어떤 종류의 pet을 갖고(has-a) 있다
         self.pet = None
 
 ## ??
 class Employee(Person):
 
     def __init__(self, name, salary):
-        ## ?? hmm what is this strange magic?
+        ## ?? 음 이 마법은 뭐죠?
         super(Employee, self).__init__(name)
         ## ??
         self.salary = salary
@@ -43,12 +43,12 @@ class Fish(object):
 class Salmon(Fish):
     pass
 
-## ??
+##??
 class Halibut(Fish):
     pass
 
 
-## rover is-a Dog
+## rover 는 Dog 의 일종(is-a) 이다
 rover = Dog("Rover")
 
 ## ??
@@ -74,5 +74,3 @@ crouse = Salmon()
 
 ## ??
 harry = Halibut()
-
-
