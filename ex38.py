@@ -1,24 +1,23 @@
-ten_things = "Apples Oranges Crows Telephone Light Sugar"
+열_가지 = "사과 귤 까마귀 전화기 빛 설탕"
 
-print("Wait there are not 10 things in that list. Let's fix that.")
+print("잠깐 아직 목록에 10개가 들어있지 않으니 한 번 고쳐 봅시다.")
 
-stuff = ten_things.split(' ')
-more_stuff = ["Day", "Night", "Song", "Frisbee", "Corn", "Banana", "Girl", "Boy"]
+물건 = 열_가지.split(' ')
+다른_물건 = ["낮", "밤", "노래", "부메랑",
+             "옥수수", "바나나", "아이", "어른"]
 
-while len(stuff) != 10:
-    next_one = more_stuff.pop()
-    print("Adding: ", next_one)
-    stuff.append(next_one)
-    print(f"There are {len(stuff)} items now.")
+while len(물건) != 10:
+    next_one = 다른_물건.pop()
+    print("추가: ", next_one)
+    물건.append(next_one)
+    print(f"이제 {len(물건)} 항목이 있습니다.")
 
-print("There we go: ", stuff)
+print("한 번 볼까요! ", 물건)
 
-print("Let's do some things with stuff.")
+print("이걸로 무언가 해 봅시다.")
 
-print(stuff[1])
-print(stuff[-1]) # whoa! fancy
-print(stuff.pop())
-print(' '.join(stuff)) # what? cool!
-print('#'.join(stuff[3:5])) # super stellar!
-
-
+print(물건[1])
+print(물건[-1]) # 워어! 좋은데?
+print(물건.pop())
+print(' '.join(물건)) # 뭐? 멋져!
+print('#'.join(물건[3:5])) # 엄청나구나!
