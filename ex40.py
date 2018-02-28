@@ -1,21 +1,20 @@
 
-class Song(object):
+class 노래(object):
 
-    def __init__(self, lyrics):
-        self.lyrics = lyrics
+    def __init__(self, 가사):
+        self.가사 = 가사
 
-    def sing_me_a_song(self):
-        for line in self.lyrics:
-            print(line)
+    def 노래_불러(self):
+        for 한줄 in self.가사:
+            print(한줄)
 
-happy_bday = Song(["Happy birthday to you",
-                   "I don't want to get sued",
-                   "So I'll stop right there"])
+생일_축하 = 노래(["생일 축하 합니다",
+                   "고소당하기는 싫으니까",
+                   "여기서 이만 할게요"])
 
-bulls_on_parade = Song(["They rally around tha family",
-                        "With pockets full of shells"])
+bulls_on_parade = 노래(["조개 껍질 한가득 차고",
+                        "가장을 위한다지"])
 
-happy_bday.sing_me_a_song()
+생일_축하.노래_불러()
 
-bulls_on_parade.sing_me_a_song()
-
+bulls_on_parade.노래_불러()
