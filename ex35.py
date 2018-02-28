@@ -1,86 +1,87 @@
 ### @export "fake"
 import fake_input
 input, input = fake_input.create([
-    'left', 
-    'taunt bear', 
-    'open door',
+    '왼쪽',
+    '곰 놀리기',
+    '문 열기',
     '1000'
     ''])
 
 ### @export "code"
 from sys import exit
 
-def gold_room():
-    print("This room is full of gold.  How much do you take?")
+def 황금_방():
+    print("황금으로 가득 찬 방입니다. 얼마나 가져갈까요?")
 
-    choice = input("> ")
-    if "0" in choice or "1" in choice:
-        how_much = int(choice)
+    선택 = input("> ")
+    if "0" in 선택 or "1" in 선택:
+        액수 = int(선택)
     else:
-        dead("Man, learn to type a number.")
+        죽음("인간이여, 숫자 쓰는 법부터 배우세요.")
 
-    if how_much < 50:
-        print("Nice, you're not greedy, you win!")
+    if 액수 < 50:
+        print("좋아, 욕심부리지 않는군요. 당신이 이겼습니다!")
         exit(0)
     else:
-        dead("You greedy bastard!")
+        죽음("욕심쟁이 얼간이같으니!")
 
 
-def bear_room():
-    print("There is a bear here.")
-    print("The bear has a bunch of honey.")
-    print("The fat bear is in front of another door.")
-    print("How are you going to move the bear?")
-    bear_moved = False
+def 곰_방():
+    print("여기에는 곰이 한 마리 있습니다.")
+    print("곰은 꿀을 잔뜩 들고 있습니다.")
+    print("뚱뚱한 곰은 다른 쪽 문 앞에 있습니다.")
+    print("어떻게 곰을 움직이겠습니까?")
+    곰이_움직임 = False
 
     while True:
-        choice = input("> ")
+        선택 = input("> ")
 
-        if choice == "take honey":
-            dead("The bear looks at you then slaps your face off.")
-        elif choice == "taunt bear" and not bear_moved:
-            print("The bear has moved from the door. You can go through it now.")
-            bear_moved = True
-        elif choice == "taunt bear" and bear_moved:
-            dead("The bear gets pissed off and chews your leg off.")
-        elif choice == "open door" and bear_moved:
-            gold_room()
+        if 선택 == "꿀 뺏기":
+            죽음("곰이 당신을 쳐다보더니 목이 떨어져라 따귀를 날립니다.")
+        elif 선택 == "곰 놀리기" and not 곰이_움직임:
+            print("곰이 문에서 비켜섰습니다.")
+            print("이제 나갈 수 있습니다.")
+            곰이_움직임 = True
+        elif 선택 == "곰 놀리기" and 곰이_움직임:
+            죽음("곰이 머리 끝까지 열받아 당신의 다리를 씹어먹습니다.")
+        elif 선택 == "문 열기" and 곰이_움직임:
+            황금_방()
         else:
-            print("I got no idea what that means.")
+            print("무슨 말을 하는 건지 모르겠네요.")
 
 
-def cthulhu_room():
-    print("Here you see the great evil Cthulhu.")
-    print("He, it, whatever stares at you and you go insane.")
-    print("Do you flee for your life or eat your head?")
+def 크툴루_방():
+    print("여기에서는 대악마 크툴루를 봅니다.")
+    print("그분이, 그것이, 아니 뭐든지 간에 당신을 쳐다보고 당신은 미쳐갑니다.")
+    print("목숨을 위해 달아나려냐 네 머리를 먹어치우려냐?")
 
-    choice = input("> ")
+    선택 = input("> ")
 
-    if "flee" in choice:
-        start()
-    elif "head" in choice:
-        dead("Well that was tasty!")
+    if "달아나기" in 선택:
+        출발()
+    elif "먹기" in 선택:
+        죽음("음 맛이 좋군요!")
     else:
-        cthulhu_room()
+        크툴루_방()
 
 
-def dead(why):
-    print(why, "Good job!")
+def 죽음(이유):
+    print(이유, "잘 했어요!")
     exit(0)
 
-def start():
-    print("You are in a dark room.")
-    print("There is a door to your right and left.")
-    print("Which one do you take?")
+def 출발():
+    print("어두운 방에 있습니다.")
+    print("오른쪽과 왼쪽에는 문이 있습니다.")
+    print("어느 쪽을 고를까요?")
 
-    choice = input("> ")
+    선택 = input("> ")
 
-    if choice == "left":
-        bear_room()
-    elif choice == "right":
-        cthulhu_room()
+    if 선택 == "왼쪽":
+        곰_방()
+    elif 선택 == "오른쪽":
+        크툴루_방()
     else:
-        dead("You stumble around the room until you starve.")
+        죽음("문 주위에서 맴돌기만 하다 굶어 죽었습니다.")
 
 
-start()
+출발()
