@@ -1,15 +1,15 @@
-class Parent(object):
+class 부모(object):
 
-    def override(self):
-        print("PARENT override()")
+    def 덮어쓰기(self):
+        print("부모 덮어쓰기()")
 
-class Child(Parent):
-    
-    def override(self):
-        print("CHILD override()")
+class 자식(부모):
 
-dad = Parent()
-son = Child()
+    def 덮어쓰기(self):
+        print("자식 덮어쓰기()")
 
-dad.override()
-son.override()
+아빠 = 부모()
+아들 = 자식()
+
+아빠.덮어쓰기()
+아들.덮어쓰기()

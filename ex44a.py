@@ -1,13 +1,13 @@
-class Parent(object):
+class 부모(object):
 
-    def implicit(self):
-        print("PARENT implicit()")
+    def 묵시적_동작(self):
+        print("부모 묵시적_동작()")
 
-class Child(Parent):
+class 자식(부모):
     pass
 
-dad = Parent()
-son = Child()
+아빠 = 부모()
+아들 = 자식()
 
-dad.implicit()
-son.implicit()
+아빠.묵시적_동작()
+아들.묵시적_동작()

@@ -1,33 +1,33 @@
-class Parent(object):
+class 부모(object):
 
-    def override(self):
-        print("PARENT override()")
+    def 덮어쓰기(self):
+        print("부모 덮어쓰기()")
 
-    def implicit(self):
-        print("PARENT implicit()")
+    def 묵시적_동작(self):
+        print("부모 묵시적_동작()")
 
-    def altered(self):
-        print("PARENT altered()")
+    def 대체하기(self):
+        print("부모 대체하기()")
 
-class Child(Parent):
-    
-    def override(self):
-        print("CHILD override()")
+class 자식(부모):
 
-    def altered(self):
-        print("CHILD, BEFORE PARENT altered()")
-        super(Child, self).altered()
-        print("CHILD, AFTER PARENT altered()")
+    def 덮어쓰기(self):
+        print("자식 덮어쓰기()")
 
-dad = Parent()
-son = Child()
+    def 대체하기(self):
+        print("자식, 부모 대체하기() 이전")
+        super(자식, self).대체하기()
+        print("자식, 부모 대체하기() 이후")
 
-dad.implicit()
-son.implicit()
+아빠 = 부모()
+아들 = 자식()
 
-dad.override()
-son.override()
+아빠.묵시적_동작()
+아들.묵시적_동작()
 
-dad.altered()
-son.altered()
+아빠.덮어쓰기()
+아들.덮어쓰기()
+
+아빠.대체하기()
+아들.대체하기()
 
