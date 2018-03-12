@@ -4,16 +4,16 @@ except ImportError:
     from distutils.core import setup
 
 config = {
-    'description': 'My Project',
-    'author': 'My Name',
-    'url': 'URL to get it at.',
-    'download_url': 'Where to download it.',
-    'author_email': 'My email.',
+    'description': '새 프로젝트',
+    'author': '내 이름',
+    'url': '프로젝트 URL',
+    'download_url': '내려받을 수 있는 곳.',
+    'author_email': '내 이메일',
     'version': '0.1',
-    'install_requires': ['nose'],
+    'install_requires': ['pytest'],
     'packages': ['NAME'],
     'scripts': [],
-    'name': 'projectname'
+    'name': '프로젝트이름'
 }
 
 setup(**config)
