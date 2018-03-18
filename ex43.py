@@ -12,34 +12,34 @@ from textwrap import dedent
 
 class Scene(object):
 
-    def enter(self):
+    def 입장(self):
         print("아직 만들지 않은 장면입니다.")
-        print("상속해 enter()를 구현하세요.")
+        print("상속해 입장()를 구현하세요.")
         exit(1)
 
 ### @export "engine_class"
 
-class Engine(object):
+class 엔진(object):
 
-    def __init__(self, scene_map):
-        self.scene_map = scene_map
+    def __init__(self, 장면_지도):
+        self.장면_지도 = 장면_지도
 
-    def play(self):
-        current_scene = self.scene_map.opening_scene()
-        last_scene = self.scene_map.next_scene('finished')
+    def 플레이(self):
+        현재_장면 = self.장면_지도.서막_장면()
+        마지막_장면 = self.장면_지도.다음_장면('끝')
 
-        while current_scene != last_scene:
-            next_scene_name = current_scene.enter()
-            current_scene = self.scene_map.next_scene(next_scene_name)
+        while 현재_장면 != 마지막_장면:
+            마지막_장면_이름 = 현재_장면.입장()
+            현재_장면 = self.장면_지도.다음_장면(마지막_장면_이름)
 
-        # be sure to print out the last scene
-        current_scene.enter()
+        # 마지막 장면을 출력하도록 한다
+        현재_장면.입장()
 
 ### @export "death_scene"
 
-class Death(Scene):
+class 사망(Scene):
 
-    quips = [
+    입담들 = [
         "사망. 진짜 못하네요.",
         "어머니가 자랑스러워 하시겠어요... 좀 더 똑똑하셨다면요.",
         "패배자 같으니.",
@@ -48,16 +48,16 @@ class Death(Scene):
 
     ]
 
-    def enter(self):
-        print(Death.quips[randint(0, len(self.quips)-1)])
+    def 입장(self):
+        print(사망.입담들[randint(0, len(self.입담들)-1)])
         exit(1)
 
 
 ### @export "center_corridor"
 
-class CentralCorridor(Scene):
+class 중앙_복도(Scene):
 
-    def enter(self):
+    def 입장(self):
         print(dedent("""
               페르칼 25번 행성의 고던족은 여러분의 우주선에 침략하고 모든
               승무원을 죽였습니다. 당신은 마지막 생존자이며 마지막 임무로
@@ -71,9 +71,9 @@ class CentralCorridor(Scene):
               참입니다.
               """))
 
-        action = input("> ")
+        행동 = input("> ")
 
-        if action == "발사!":
+        if 행동 == "발사!":
             print(dedent("""
                   당신은 광선총을 빼들기가 무섭게 고던인을 쏘아버립니다.
                   고던인의 광대 옷이 휘날려 몸을 숨겨주고 당신의 조준을
@@ -82,9 +82,9 @@ class CentralCorridor(Scene):
                   고던인은 광기 어린 분노에 빠져들어 당신이 죽을 때까지
                   얼굴을 쏘아댑니다. 고던인은 당신을 먹어치웁니다.
                   """))
-            return 'death'
+            return '사망'
 
-        elif action == "회피!":
+        elif 행동 == "회피!":
             print(dedent("""
                   국제경기급 권투 선수처럼 달리고 피하고 구르고 오른쪽으로
                   미끄러져 고던인의 광선총이 당신의 머리 옆을 빗겨 쏘도록
@@ -92,9 +92,9 @@ class CentralCorridor(Scene):
                   벽에 머리를 찧고 기절합니다. 잠시 후 정신을 차리지만
                   고던인은 그저 머리를 짓밟아 죽이고는 잡아 먹을 뿐입니다.
                   """))
-            return 'death'
+            return '사망'
 
-        elif action == "농담하기":
+        elif 행동 == "농담하기":
             print(dedent("""
                   운좋게도 당신은 학교에서 고던어 욕설을 배웠습니다. 아는
                   고던 농담을 하나 합니다.
@@ -105,17 +105,17 @@ class CentralCorridor(Scene):
                   틈에 뛰쳐나가 정통으로 머리를 맞춰 쓰러뜨리고 무기고의
                   문으로 뛰어듭니다.
                   """))
-            return 'laser_weapon_armory'
+            return '레이저_무기고'
 
         else:
             print("처리할 수 없습니다!")
-            return 'central_corridor'
+            return '중앙_복도'
 
 ### @export "game_scenes"
 
-class LaserWeaponArmory(Scene):
+class 레이저_무기고(Scene):
 
-    def enter(self):
+    def 입장(self):
         print(dedent("""
               당신은 무기고로 뛰어 들어 구르고는 쪼그려 앉야 혹시
               숨어있을지도 모르는 고던인을 찾아 방을 살핍니다. 쥐 죽은
@@ -127,22 +127,22 @@ class LaserWeaponArmory(Scene):
               수입니다.
               """))
 
-        code = f"{randint(1,9)}{randint(1,9)}{randint(1,9)}"
-        guess = input("[번호판]> ")
-        guesses = 0
+        코드 = f"{randint(1,9)}{randint(1,9)}{randint(1,9)}"
+        추측 = input("[번호판]> ")
+        추측_횟수 = 0
 
-        while guess != code and guesses < 10:
+        while 추측 != 코드 and 추측_횟수 < 10:
             print("삐비비빅!")
-            guesses += 1
-            guess = input("[번호판]> ")
+            추측_횟수 += 1
+            추측 = input("[번호판]> ")
 
-        if guess == code:
+        if 추측 == 코드:
             print(dedent("""
                   보관함이 철컥하며 열리며 밀폐가 풀리자 공기가
                   새어나옵니다. 중성자파괴탄을 움켜쥐고 설치해야 할 장소인
                   함교를 향해 할 수 있는 한 가장 빠른 속도로 내달립니다.
                   """))
-            return 'the_bridge'
+            return '함교'
         else:
             print(dedent("""
                   마지막 기회가 지나자 자물쇠가 웅웅거리며 기계장치가
@@ -150,13 +150,13 @@ class LaserWeaponArmory(Scene):
                   당신은 거기 주저앉아 있기로 마음먹었고, 결국 고던
                   우주선이 당신네 우주선을 터뜨려 죽음을 맞습니다.
                   """))
-            return 'death'
+            return '사망'
 
 
 
-class TheBridge(Scene):
+class 함교(Scene):
 
-    def enter(self):
+    def 입장(self):
         print(dedent("""
               겨드랑이에 중성자파괴탄을 끼고 함교로 뛰어들어 우주선
               조종권을 탈취하던 고던인 5명을 놀래킵니다. 그 모두가
@@ -166,9 +166,9 @@ class TheBridge(Scene):
               싶어합니다.
               """))
 
-        action = input("> ")
+        행동 = input("> ")
 
-        if action == "폭탄 던지기":
+        if 행동 == "폭탄 던지기":
             print(dedent("""
                   당신은 당황해서는 고던인 무리에 폭탄을 집어 던지고는
                   문으로 펄쩍 뛰어 오릅니다. 폭탄을 놓자마자 고던인
@@ -178,9 +178,9 @@ class TheBridge(Scene):
                   폭탄이 터지면 고던인 모두가 터져 나가리라고
                   생각합니다.
                   """))
-            return 'death'
+            return '사망'
 
-        elif action == "천천히 폭탄 설치하기":
+        elif 행동 == "천천히 폭탄 설치하기":
             print(dedent("""
                   폭탄을 광선총으로 겨누자 고던인들은 두 손을 들고
                   삐질삐질 땀을 흘리기 시작합니다. 당신은 문 뒤에
@@ -192,15 +192,15 @@ class TheBridge(Scene):
                   구명정으로 내달립니다.
                   """))
 
-            return 'escape_pod'
+            return '구명정'
         else:
             print("처리할 수 없습니다!")
-            return "the_bridge"
+            return "함교"
 
 
-class EscapePod(Scene):
+class 구명정(Scene):
 
-    def enter(self):
+    def 입장(self):
         print(dedent("""
               우주선이 통째로 폭발하기 전에 구명정에 닿기 위해
               우주선을 가로질러 필사적으로 달립니다. 우주선에는
@@ -211,61 +211,61 @@ class EscapePod(Scene):
               타겠습니까?
               """))
 
-        good_pod = randint(1, 5)
-        guess = input("[구명정 번호]> ")
+        정상_구명정 = randint(1, 5)
+        추측 = input("[구명정 번호]> ")
 
 
-        if int(guess) != good_pod:
+        if int(추측) != 정상_구명정:
             print(dedent(f"""
-                  {guess}번 구명정으로 뛰어들어 탈출 단추를 누릅니다.
+                  {추측}번 구명정으로 뛰어들어 탈출 단추를 누릅니다.
                   구명정이 우주의 진공으로 나아가자마자, 선체가
                   파열해 찌그러져 들며 당신을 곤약처럼 으스러뜨립니다.
                   """))
-            return 'death'
+            return '사망'
         else:
             print(dedent(f"""
-                  {guess}번 구명정으로 뛰어들어 탈출 단추를 누릅니다.
+                  {추측}번 구명정으로 뛰어들어 탈출 단추를 누릅니다.
                   구명정은 가볍게 우주로 미끄러져 나가며 아래의
                   행성으로 향합니다. 행성으로 향하는 동안 뒤를 돌아보자
                   당신네 우주선이 붕괴했다가는 밝은 별처럼 폭발하며 고던
                   우주선까지 휩쓸어 버리는 것을 확인합니다. 승리!
                   """))
 
-            return 'finished'
+            return '끝'
 
 
-class Finished(Scene):
+class 끝(Scene):
 
-    def enter(self):
+    def 입장(self):
         print("승리했습니다! 잘 했어요.")
-        return 'finished'
+        return '끝'
 
 
 ### @export "map_class"
 
-class Map(object):
+class 지도(object):
 
-    scenes = {
-        'central_corridor': CentralCorridor(),
-        'laser_weapon_armory': LaserWeaponArmory(),
-        'the_bridge': TheBridge(),
-        'escape_pod': EscapePod(),
-        'death': Death(),
-        'finished': Finished(),
+    장면들 = {
+        '중앙_복도': 중앙_복도(),
+        '레이저_무기고': 레이저_무기고(),
+        '함교': 함교(),
+        '구명정': 구명정(),
+        '사망': 사망(),
+        '끝': 끝(),
     }
 
-    def __init__(self, start_scene):
-        self.start_scene = start_scene
+    def __init__(self, 시작할_장면):
+        self.시작할_장면 = 시작할_장면
 
-    def next_scene(self, scene_name):
-        val = Map.scenes.get(scene_name)
-        return val
+    def 다음_장면(self, 장면_이름):
+        다음 = 지도.장면들.get(장면_이름)
+        return 다음
 
-    def opening_scene(self):
-        return self.next_scene(self.start_scene)
+    def 서막_장면(self):
+        return self.다음_장면(self.시작할_장면)
 
 ### @export "final_run"
 
-a_map = Map('central_corridor')
-a_game = Engine(a_map)
-a_game.play()
+게임_지도 = 지도('중앙_복도')
+게임_엔진 = 엔진(게임_지도)
+게임_엔진.플레이()
