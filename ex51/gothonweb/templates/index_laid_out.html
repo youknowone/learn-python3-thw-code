@@ -2,8 +2,9 @@
 
 {% block content %}
 
-{% if greeting %}
-    I just wanted to say <em style="color: green; font-size: 2em;">{{ greeting }}</em>.
+{% if 인사말 %}
+    그냥 할말이 있었어요.
+    <em style="color: green; font-size: 2em;">{{ 인사말 }}</em>.
 {% else %}
     <em>Hello</em>, world!
 {% endif %}

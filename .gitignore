@@ -90,3 +90,5 @@ ENV/
 
 .*.sw*
 .swp
+
+.pytest_cache

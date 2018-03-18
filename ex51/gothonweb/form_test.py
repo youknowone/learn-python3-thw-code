@@ -4,16 +4,16 @@ from flask import request
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/hello")
 def index():
-    name = request.args.get('name', 'Nobody')
+    이름 = request.args.get('name', '아무개')
 
-    if name:
-        greeting = f"Hello, {name}"
+    if 이름:
+        인사말 = f"안녕, {이름}"
     else:
-        greeting = "Hello World"
+        인사말 = "Hello World"
 
-    return render_template("index.html", greeting=greeting)
+    return render_template("index.html", 인사말=인사말)
 
 if __name__ == "__main__":
     app.run()

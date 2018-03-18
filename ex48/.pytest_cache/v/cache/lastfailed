@@ -1,0 +1,8 @@
+{
+  "tests/lexicon_test.py::test_directions": true,
+  "tests/lexicon_test.py::test_errors": true,
+  "tests/lexicon_test.py::test_nouns": true,
+  "tests/lexicon_test.py::test_numbers": true,
+  "tests/lexicon_test.py::test_stops": true,
+  "tests/lexicon_test.py::test_verbs": true
+}

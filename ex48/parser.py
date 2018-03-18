@@ -1,84 +1,89 @@
 ### @export "exception"
-class ParserError(Exception):
+class 구문분석기_오류(Exception):
     pass
 
 ### @export "sentence"
-class Sentence(object):
+class 문장(object):
 
-    def __init__(self, subject, verb, obj):
-        # remember we take ('noun','princess') tuples and convert them
-        self.subject = subject[1]
-        self.verb = verb[1]
-        self.object = obj[1]
+    def __init__(self, 주어, 목적어, 동사):
+        # remember we take ('명사','공주') tuples and convert them
+        self.주어 = 주어[1]
+        self.목적어 = 목적어[1]
+        self.동사 = 동사[1]
 
-### @export "peek"
-def peek(word_list):
-    if word_list:
-        word = word_list[0]
-        return word[0]
+### @export "미리보기"
+def 미리보기(단어_리스트):
+    if 단어_리스트:
+        단어 = 단어_리스트[0]
+        return 단어[0]
     else:
         return None
 
 
-### @export "match"
-def match(word_list, expecting):
-    if word_list:
-        word = word_list.pop(0)
+### @export "맞춰보기"
+def 맞춰보기(단어_리스트, 기대값):
+    if 단어_리스트:
+        단어 = 단어_리스트.pop(0)
 
-        if word[0] == expecting:
-            return word
+        if 단어[0] == 기대값:
+            return 단어
         else:
             return None
     else:
         return None
 
 
-### @export "skip"
-def skip(word_list, word_type):
-    while peek(word_list) == word_type:
-        match(word_list, word_type)
+### @export "건너뛰기"
+def 건너뛰기(단어_리스트, 단어_유형):
+    while 미리보기(단어_리스트) == 단어_유형:
+        맞춰보기(단어_리스트, 단어_유형)
 
 
-### @export "parse_verb"
-def parse_verb(word_list):
-    skip(word_list, 'stop')
+### @export "동사_분석"
+def 동사_분석(단어_리스트):
+    건너뛰기(단어_리스트, '제외')
 
-    if peek(word_list) == 'verb':
-        return match(word_list, 'verb')
+    if 미리보기(단어_리스트) == '동사':
+        return 맞춰보기(단어_리스트, '동사')
     else:
-        raise ParserError("Expected a verb next.")
+        raise 구문분석기_오류("동사가 나올 차례입니다.")
 
 
-### @export "parse_object"
-def parse_object(word_list):
-    skip(word_list, 'stop')
-    next_word = peek(word_list)
+### @export "목적어_분석"
+def 목적어_분석(단어_리스트):
+    건너뛰기(단어_리스트, '제외')
+    다음_단어 = 미리보기(단어_리스트)
 
-    if next_word == 'noun':
-        return match(word_list, 'noun')
-    elif next_word == 'direction':
-        return match(word_list, 'direction')
+    if 다음_단어 == '명사':
+        return 맞춰보기(단어_리스트, '명사')
+    elif 다음_단어 == '방향':
+        return 맞춰보기(단어_리스트, '방향')
     else:
-        raise ParserError("Expected a noun or direction next.")
+        raise 구문분석기_오류("명사나 방향이 나올 차례입니다.")
 
 
-### @export "parse_subject"
-def parse_subject(word_list):
-    skip(word_list, 'stop')
-    next_word = peek(word_list)
+### @export "주어_분석"
+def 주어_분석(단어_리스트):
+    건너뛰기(단어_리스트, '제외')
+    다음_단어 = 미리보기(단어_리스트)
 
-    if next_word == 'noun':
-        return match(word_list, 'noun')
-    elif next_word == 'verb':
-        return ('noun', 'player')
+    if 다음_단어 == '명사':
+        return 맞춰보기(단어_리스트, '명사')
+    elif 다음_단어 == '동사':
+        return ('명사', '플레이어')
     else:
-        raise ParserError("Expected a verb next.")
+        raise 구문분석기_오류("명사가 나올 차례입니다.")
 
-### @export "parse_sentence"
-def parse_sentence(word_list):
-    subj = parse_subject(word_list)
-    verb = parse_verb(word_list)
-    obj = parse_object(word_list)
+### @export "문장_분석"
+def 문장_분석(단어_리스트):
+    주어 = 주어_분석(단어_리스트)
+    try:
+        목적어 = 목적어_분석(단어_리스트)
+    except 구문분석기_오류:
+        # 명사가 하나면 주어가 아닌 목적어로 간주
+        목적어 = 주어
+        주어 = ('명사', '플레이어')
+    동사 = 동사_분석(단어_리스트)
 
-    return Sentence(subj, verb, obj)
+    return 문장(주어, 동사, 목적어)
 

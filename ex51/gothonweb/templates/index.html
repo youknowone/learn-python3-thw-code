@@ -1,16 +1,18 @@
 <html>
     <head>
-        <title>Gothons Of Planet Percal #25</title>
+        <meta charset="utf-8" />
+        <title>페르칼 25번 행성의 고던족</title>
     </head>
 <body>
 
-{% if greeting %}
-    I just wanted to say <em style="color: green; font-size: 2em;">{{ greeting }}</em>.
+{% if 인사말 %}
+    그냥 할말이 있었어요. 
+    <em style="color: green; font-size: 2em;">{{ 인사말 }}</em>.
 {% else %}
-    <em>Hello</em>, world!
+    <em>안녕</em>, 세상!
 {% endif %}
 
-<p><a href="/hello">Try again.</a></p>
+<p><a href="/hello">다시 하기.</a></p>
 
 </body>
 </html>
