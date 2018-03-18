@@ -1,40 +1,32 @@
-from nose.tools import *
 from gothonweb.planisphere import *
 
-def test_room():
-    gold = Room("GoldRoom", 
-                """This room has gold in it you can grab. There's a
-                door to the north.""")
-    assert_equal(gold.name, "GoldRoom")
-    assert_equal(gold.paths, {})
 
-def test_room_paths():
-    center = Room("Center", "Test room in the center.")
-    north = Room("North", "Test room in the north.")
-    south = Room("South", "Test room in the south.")
+def test_방():
+    황금 = 방("황금방",
+              """이 방에는 주워 담을 수 있는 금이 있습니다. 북쪽에는 문이
+              있습니다""")
+    assert 황금.이름 == "황금방"
+    assert 황금.길들 == {}
 
-    center.add_paths({'north': north, 'south': south})
-    assert_equal(center.go('north'), north)
-    assert_equal(center.go('south'), south)
-    
-def test_map():
-    start = Room("Start", "You can go west and down a hole.")
-    west = Room("Trees", "There are trees here, you can go east.")
-    down = Room("Dungeon", "It's dark down here, you can go up.")
+def test_방_길들():
+    중앙 = 방("중앙", "중앙의 테스트 방.")
+    북쪽 = 방("북쪽", "북쪽의 테스트 방.")
+    남쪽 = 방("남쪽", "남쪽의 테스트 방.")
 
-    start.add_paths({'west': west, 'down': down})
-    west.add_paths({'east': start})
-    down.add_paths({'up': start})
+    중앙.길_추가({'북쪽': 북쪽, '남쪽': 남쪽})
+    assert 중앙.이동('북쪽') == 북쪽
+    assert 중앙.이동('남쪽') == 남쪽
 
-    assert_equal(start.go('west'), west)
-    assert_equal(start.go('west').go('east'), start)
-    assert_equal(start.go('down').go('up'), start)
+def test_지도():
+    시작 = 방("시작", "서쪽이나 구멍 아래로 갈 수 있습니다.")
+    서쪽 = 방("나무", "나무가 있습니다. 동쪽으로 갈 수 있습니다.")
+    아래 = 방("던전", "아래는 어둡습니다. 위로 갈 수 있습니다")
 
-def test_gothon_game_map():
-    start_room = load_room(START)
-    assert_equal(start_room.go('shoot!'), generic_death)
-    assert_equal(start_room.go('dodge!'), generic_death)
+    시작.길_추가({'서쪽': 서쪽, '아래': 아래})
+    서쪽.길_추가({'동쪽': 시작})
+    아래.길_추가({'위': 시작})
 
-    room = start_room.go('tell a joke')
-    assert_equal(room, laser_weapon_armory)
+    assert 시작.이동('서쪽') == 서쪽
+    assert 시작.이동('서쪽').이동('동쪽') == 시작
+    assert 시작.이동('아래').이동('위') == 시작
 

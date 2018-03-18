@@ -1,146 +1,147 @@
 
 
-class Room(object):
+class 방(object):
 
-    def __init__(self, name, description):
-        self.name = name
-        self.description = description
-        self.paths = {}
+    def __init__(self, 이름, 설명):
+        self.이름 = 이름
+        self.설명 = 설명
+        self.길들 = {}
 
-    def go(self, direction):
-        return self.paths.get(direction, None)
+    def 이동(self, 방향):
+        return self.길들.get(방향, None)
 
-    def add_paths(self, paths):
-        self.paths.update(paths)
+    def 길_추가(self, 길들):
+        self.길들.update(길들)
 
 
-central_corridor = Room("Central Corridor",
+중앙_복도 = 방("중앙 복도",
 """
-The Gothons of Planet Percal #25 have invaded your ship and destroyed
-your entire crew.  You are the last surviving member and your last
-mission is to get the neutron destruct bomb from the Weapons Armory,
-put it in the bridge, and blow the ship up after getting into an 
-escape pod.
+페르칼 25번 행성의 고던족은 여러분의 우주선에 침략하고 모든
+승무원을 죽였습니다. 당신은 마지막 생존자이며 마지막 임무로
+무기고에서 중성자파괴탄을 가져와 함교에 설치하고 구명정에 타기
+전에 우주선을 폭파해야합니다.
 
-You're running down the central corridor to the Weapons Armory when
-a Gothon jumps out, red scaly skin, dark grimy teeth, and evil clown costume
-flowing around his hate filled body.  He's blocking the door to the
-Armory and about to pull a weapon to blast you.
+붉은 비늘 피부, 시커먼 때가 낀 이빨, 증오로 가득 찬 몸에서 물
+흐르듯 이어지는 사악한 광대 복장의 고던인이 뛰쳐 나오는 동안
+당신은 중앙 복도에서 무기고로 내달리고 있습니다. 고던인은
+무기고로 가는 문을 가로막고 당신을 날려버리러 무기를 겨누는
+참입니다.
 """)
 
 
-laser_weapon_armory = Room("Laser Weapon Armory",
+레이저_무기고 = 방("레이저 무기고",
 """
-Lucky for you they made you learn Gothon insults in the academy.
-You tell the one Gothon joke you know:
-Lbhe zbgure vf fb sng, jura fur fvgf nebhaq gur ubhfr, fur fvgf nebhaq gur ubhfr.
-The Gothon stops, tries not to laugh, then busts out laughing and can't move.
-While he's laughing you run up and shoot him square in the head
-putting him down, then jump through the Weapon Armory door.
+운좋게도 당신은 학교에서 고던어 욕설을 배웠습니다. 아는
+고던 농담을 하나 합니다.
+Lbhe zbgure vf fb sng, jura fur fvgf nebhaq gur ubhfr,
+fur fvgf nebhaq gur ubhfr.
+고던인은 멈춰서서 웃지 않으려 애쓰지만, 결국 웃음보가
+터지자 꼼짝도 하지 못합니다. 당신은 고던인이 웃어대는
+틈에 뛰쳐나가 정통으로 머리를 맞춰 쓰러뜨리고 무기고의
+문으로 뛰어듭니다.
 
-You do a dive roll into the Weapon Armory, crouch and scan the room
-for more Gothons that might be hiding.  It's dead quiet, too quiet.
-You stand up and run to the far side of the room and find the
-neutron bomb in its container.  There's a keypad lock on the box
-and you need the code to get the bomb out.  If you get the code
-wrong 10 times then the lock closes forever and you can't
-get the bomb.  The code is 3 digits.
+당신은 무기고로 뛰어 들어 구르고는 쪼그려 앉야 혹시
+숨어있을지도 모르는 고던인을 찾아 방을 살핍니다. 쥐 죽은
+듯이, 지나칠 만큼 조용합니다. 일어서서는 문 건너편으로
+달려 보관함에서 중성자파괴탄을 찾습니다. 보관함은
+비밀번호로 잠겨 있고 중성자파괴탄을 꺼내려면 비밀번호를
+알아내야만 합니다. 비밀번호를 10번 틀리면 자물쇠는
+영원히 잠기고 폭탄은 꺼낼 수 없습니다. 비밀번호는 3자리
+수입니다.
 """)
 
 
-the_bridge = Room("The Bridge",
+함교 = 방("The Bridge",
 """
-The container clicks open and the seal breaks, letting gas out.
-You grab the neutron bomb and run as fast as you can to the
-bridge where you must place it in the right spot.
+보관함이 철컥하며 열리며 밀폐가 풀리자 공기가
+새어나옵니다. 중성자파괴탄을 움켜쥐고 설치해야 할 장소인
+함교를 향해 할 수 있는 한 가장 빠른 속도로 내달립니다.
 
-You burst onto the Bridge with the netron destruct bomb
-under your arm and surprise 5 Gothons who are trying to
-take control of the ship.  Each of them has an even uglier
-clown costume than the last.  They haven't pulled their
-weapons out yet, as they see the active bomb under your
-arm and don't want to set it off.
+겨드랑이에 중성자파괴탄을 끼고 함교로 뛰어들어 우주선
+조종권을 탈취하던 고던인 5명을 놀래킵니다. 그 모두가
+아까 본 고던인보다도 더 흉측한 광대 복장을 하고
+있습니다. 고던인들은 아직 무기를 뽑지는 않았는데,
+활성화된 폭탄을 든 걸 보자 더욱이 터뜨리지 않고
+싶어합니다.
 """)
 
 
-escape_pod = Room("Escape Pod",
+구명정 = 방("Escape Pod",
 """
-You point your blaster at the bomb under your arm
-and the Gothons put their hands up and start to sweat.
-You inch backward to the door, open it, and then carefully
-place the bomb on the floor, pointing your blaster at it.
-You then jump back through the door, punch the close button
-and blast the lock so the Gothons can't get out.
-Now that the bomb is placed you run to the escape pod to
-get off this tin can.
+폭탄을 광선총으로 겨누자 고던인들은 두 손을 들고
+삐질삐질 땀을 흘리기 시작합니다. 당신은 문 뒤에
+바짝 붙어서는, 문을 열고, 광선총을 그대로 겨눈 채로,
+조심스레 폭탄을 바닥에 설치합니다. 곧 이어 문 밖으로
+뛰쳐나와 닫기 단추를 두들기고는 잠금장치를 쏴 갈겨
+고던인들이 빠져 나올 수 없도록 만들어버립니다.
+이제 폭탄은 설치되었고, 이 깡통에서 벗어나도록
+구명정으로 내달립니다.
 
-You rush through the ship desperately trying to make it to
-the escape pod before the whole ship explodes.  It seems like
-hardly any Gothons are on the ship, so your run is clear of
-interference.  You get to the chamber with the escape pods, and
-now need to pick one to take.  Some of them could be damaged
-but you don't have time to look.  There's 5 pods, which one
-do you take?
+우주선이 통째로 폭발하기 전에 구명정에 닿기 위해
+우주선을 가로질러 필사적으로 달립니다. 우주선에는
+고던인이 거의 없어 방해받지 않고 질주합니다. 구명정이
+있는 방에 도달한 당신은 어떤 걸 탈지 하나를 골라야
+합니다. 이 가운데 몇 개는 손상되었을 수도 있지만 살펴볼
+시간이 없습니다. 구명정은 5대가 있습니다. 몇 번을
+타겠습니까?
 """)
 
 
-the_end_winner = Room("The End",
+결말_승리 = 방("결말",
 """
-You jump into pod 2 and hit the eject button.
-The pod easily slides out into space heading to
-the planet below.  As it flies to the planet, you look
-back and see your ship implode then explode like a
-bright star, taking out the Gothon ship at the same
-time.  You won!
+2번 구명정으로 뛰어들어 탈출 단추를 누릅니다.
+구명정은 가볍게 우주로 미끄러져 나가며 아래의
+행성으로 향합니다. 행성으로 향하는 동안 뒤를 돌아보자
+당신네 우주선이 붕괴했다가는 밝은 별처럼 폭발하며 고던
+우주선까지 휩쓸어 버리는 것을 확인합니다. 승리!
 """)
 
 
-the_end_loser = Room("The End",
+결말_패배 = 방("결말",
 """
-You jump into a random pod and hit the eject button.
-The pod escapes out into the void of space, then
-implodes as the hull ruptures, crushing your body
-into jam jelly.
+아무 구명정으로 뛰어들어 탈출 단추를 누릅니다.
+구명정이 우주의 진공으로 나아가자마자, 선체가
+파열해 찌그러져 들며 당신을 곤약처럼 으스러뜨립니다.
 """
 )
 
-escape_pod.add_paths({
-    '2': the_end_winner,
-    '*': the_end_loser
+구명정.길_추가({
+    '2': 결말_승리,
+    '*': 결말_패배
 })
 
-generic_death = Room("death", "You died.")
+일반_사망 = 방("사망", "죽었습니다.")
 
-the_bridge.add_paths({
-    'throw the bomb': generic_death,
-    'slowly place the bomb': escape_pod
+함교.길_추가({
+    '폭탄 던지기': 일반_사망,
+    '천천히 폭탄 설치하기': 구명정
 })
 
-laser_weapon_armory.add_paths({
-    '0132': the_bridge,
-    '*': generic_death
+레이저_무기고.길_추가({
+    '0132': 함교,
+    '*': 일반_사망
 })
 
-central_corridor.add_paths({
-    'shoot!': generic_death,
-    'dodge!': generic_death,
-    'tell a joke': laser_weapon_armory
+중앙_복도.길_추가({
+    '발사!': 일반_사망,
+    '회피!': 일반_사망,
+    '농담하기': 레이저_무기고
 })
 
-START = 'central_corridor'
+START = '중앙_복도'
 
-def load_room(name):
+def 방_가져오기(이름):
     """
-    There is a potential security problem here.
-    Who gets to set name? Can that expose a variable?
+    여기에는 잠재적인 보안 문제가 있습니다.
+    이름은 누가 정한 걸까요? 변수를 노출시킬 수 있을까요?
     """
-    return globals().get(name)
+    return globals().get(이름)
 
-def name_room(room):
+def 방_이름(방):
     """
-    Same possible security problem.  Can you trust room?
-    What's a better solution than this globals lookup?
+    똑같은 보안 문제가 있습니다. '방'은 안전한 값이라고 믿을 수 있나요?
+    globals에서 찾는 것보다 나은 방법은 무엇일까요?
     """
     for key, value in globals().items():
-        if value == room:
+        if value == 방:
             return key
