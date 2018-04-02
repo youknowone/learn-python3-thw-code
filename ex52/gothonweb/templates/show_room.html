@@ -2,14 +2,14 @@
 
 {% block content %}
 
-<h1> {{ room.name }}  </h1>
+<h1> {{ 방.이름 }}  </h1>
 
 <pre>
-{{ room.description }}
+{{ 방.설명 }}
 </pre>
 
-{% if room.name in ["death", "The End"] %}
-    <p><a href="/">Play Again?</a></p>
+{% if 방.이름 in ["사망", "결말"] %}
+    <p><a href="/">다시 하기</a></p>
 {% else %}
     <p>
     <form action="/game" method="POST">

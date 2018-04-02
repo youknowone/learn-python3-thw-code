@@ -6,37 +6,37 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    # this is used to "setup" the session with starting values
-    session['room_name'] = planisphere.START
+    # 시작할 때 세션에 시작 값을 미리 넣어둔다
+    session['방_이름'] = planisphere.시작_이름
     return redirect(url_for("game"))
 
 @app.route("/game", methods=['GET', 'POST'])
 def game():
-    room_name = session.get('room_name')
+    방_이름 = session.get('방_이름')
 
     if request.method == "GET":
-        if room_name:
-            room = planisphere.load_room(room_name)
-            return render_template("show_room.html", room=room)
+        if 방_이름:
+            방 = planisphere.방_가져오기(방_이름)
+            return render_template("show_room.html", 방=방)
         else:
-            # why is there here? do you need it?'
+            # 왜 여기 넣었을까요? 꼭 필요한가요?
             return render_template("you_died.html")
     else:
-        action = request.form.get('action')
+        행동 = request.form.get('action')
 
-        if room_name and action:
-            room = planisphere.load_room(room_name)
-            next_room = room.go(action)
+        if 방_이름 and 행동:
+            방 = planisphere.방_가져오기(방_이름)
+            다음_방 = 방.이동(행동)
 
-            if not next_room:
-                session['room_name'] = planisphere.name_room(room)
+            if not 다음_방:
+                session['방_이름'] = planisphere.방_이름(방)
             else:
-                session['room_name'] = planisphere.name_room(next_room)
+                session['방_이름'] = planisphere.방_이름(다음_방)
 
         return redirect(url_for("game"))
 
 
-# YOU SHOULD CHANGE THIS IF YOU PUT ON THE INTERNET
+# 인터넷에 올리려면 secret_key를 반드시 변경해야 합니다.
 app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
 
 if __name__ == "__main__":

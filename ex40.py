@@ -1,4 +1,3 @@
-
 class 노래(object):
 
     def __init__(self, 가사):

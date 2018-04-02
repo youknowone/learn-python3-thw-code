@@ -2,7 +2,7 @@ import random
 from urllib.request import urlopen
 import sys
 
-단어_URL = "http://learncodethehardway.org/단어s.txt"
+단어_URL = "http://learncodethehardway.org/words.txt"
 단어들 = []
 
 문장들 = {
@@ -44,8 +44,7 @@ def 변환(코드조각, 문장):
             random.sample(단어들, 매개변수_수)))
 
     for 문장 in 코드조각, 문장:
-        # 리스트나 문자열을 복사하는 방법
-        결과 = 문장[:]
+        결과 = 문장
 
         # 가짜 클래스 이름
         for 단어 in 클래스_이름들:

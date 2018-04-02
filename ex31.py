@@ -6,7 +6,6 @@ input, input = fake_input.create([
     ''])
 
 ### @export "code"
-
 print("""문이 두 개 있는 어두운 방에 들어왔습니다.
 1번과 2번 중 어느 방으로 들어갈까요?""")
 

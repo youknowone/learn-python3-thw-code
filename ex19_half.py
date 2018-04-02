@@ -1,4 +1,3 @@
-
 def cheese_and_crackers(cheese_count, boxes_of_crackers):
     print("치즈가 {cheese_count}개 있어요!")
     print("크래커가 {boxes_of_crakers} 상자 있어요!")

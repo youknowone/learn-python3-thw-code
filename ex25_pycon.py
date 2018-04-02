@@ -1,16 +1,16 @@
 import ex25
-sentence = "All good things come to those who wait."
-words = ex25.break_words(sentence)
-words
-sorted_words = ex25.sort_words(words)
-sorted_words
-ex25.print_first_word(words)
-ex25.print_last_word(words)
-words
-ex25.print_first_word(sorted_words)
-ex25.print_last_word(sorted_words)
-sorted_words
-sorted_words = ex25.sort_sentence(sentence)
-sorted_words
-ex25.print_first_and_last(sentence)
-ex25.print_first_and_last_sorted(sentence)
+문장 = "기다리는 자에게 복이 온다"
+단어들 = ex25.단어_쪼개기(문장)
+단어들
+정렬한_단어들 = ex25.단어_정렬(단어들)
+정렬한_단어들
+ex25.첫_단어_출력(단어들)
+ex25.마지막_단어_출력(단어들)
+단어들
+ex25.첫_단어_출력(정렬한_단어들)
+ex25.마지막_단어_출력(정렬한_단어들)
+정렬한_단어들
+정렬한_단어들 = ex25.문장_정렬(문장)
+정렬한_단어들
+ex25.처음과_마지막_단어_출력(문장)
+ex25.정렬_후_처음과_마지막_단어_출력(문장)

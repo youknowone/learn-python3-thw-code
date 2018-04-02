@@ -1,4 +1,3 @@
-
 # argv를 쓴 스크립트와 비슷한 함수
 def print_two(*args):
     arg1, arg2 = args

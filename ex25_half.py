@@ -1,4 +1,3 @@
-
 def break_words(stuff):
     """문자열을 단어 단위로 쪼개 줍니다"""
     words = stuff.split(' ')

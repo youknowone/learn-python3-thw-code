@@ -1,4 +1,3 @@
-
 def 더하기(a, b):
     print(f"덧셈 {a} + {b}")
     return a + b
