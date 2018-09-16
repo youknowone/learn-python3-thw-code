@@ -1,5 +1,3 @@
-
-
 class 방(object):
 
     def __init__(self, 이름, 설명):

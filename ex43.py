@@ -3,7 +3,6 @@ import fake_input
 input, input = fake_input.create(['회피!'])
 
 ### @export "imports"
-
 from sys import exit
 from random import randint
 from textwrap import dedent
@@ -18,7 +17,6 @@ class Scene(object):
         exit(1)
 
 ### @export "engine_class"
-
 class 엔진(object):
 
     def __init__(self, 장면_지도):
@@ -36,7 +34,6 @@ class 엔진(object):
         현재_장면.입장()
 
 ### @export "death_scene"
-
 class 사망(Scene):
 
     입담들 = [
@@ -52,9 +49,7 @@ class 사망(Scene):
         print(사망.입담들[randint(0, len(self.입담들)-1)])
         exit(1)
 
-
 ### @export "center_corridor"
-
 class 중앙_복도(Scene):
 
     def 입장(self):
@@ -112,7 +107,6 @@ class 중앙_복도(Scene):
             return '중앙_복도'
 
 ### @export "game_scenes"
-
 class 레이저_무기고(Scene):
 
     def 입장(self):
@@ -151,7 +145,6 @@ class 레이저_무기고(Scene):
                   우주선이 당신네 우주선을 터뜨려 죽음을 맞습니다.
                   """))
             return '사망'
-
 
 
 class 함교(Scene):
@@ -240,9 +233,7 @@ class 끝(Scene):
         print("승리했습니다! 잘 했어요.")
         return '끝'
 
-
 ### @export "map_class"
-
 class 지도(object):
 
     장면들 = {
@@ -265,7 +256,6 @@ class 지도(object):
         return self.다음_장면(self.시작할_장면)
 
 ### @export "final_run"
-
 게임_지도 = 지도('중앙_복도')
 게임_엔진 = 엔진(게임_지도)
 게임_엔진.플레이()

@@ -1,56 +1,56 @@
-class Scene(object):
+class 장면(object):
 
-    def enter(self):
+    def 입장(self):
         pass
 
 
-class Engine(object):
+class 엔진(object):
 
-    def __init__(self, scene_map):
+    def __init__(self, 장면_지도):
         pass
 
-    def play(self):
+    def 플레이(self):
         pass
 
-class Death(Scene):
+class 사망(장면):
 
-    def enter(self):
+    def 입장(self):
         pass
 
-class CentralCorridor(Scene):
+class 중앙_복도(장면):
 
-    def enter(self):
+    def 입장(self):
         pass
 
-class LaserWeaponArmory(Scene):
+class 레이저_무기고(장면):
 
-    def enter(self):
+    def 입장(self):
         pass
 
-class TheBridge(Scene):
+class 함교(장면):
 
-    def enter(self):
+    def 입장(self):
         pass
 
-class EscapePod(Scene):
+class 구명정(장면):
 
-    def enter(self):
-        pass
-
-
-class Map(object):
-
-    def __init__(self, start_scene):
-        pass
-
-    def next_scene(self, scene_name):
-        pass
-
-    def opening_scene(self):
+    def 입장(self):
         pass
 
 
-a_map = Map('central_corridor')
-a_game = Engine(a_map)
-a_game.play()
+class 지도(object):
+
+    def __init__(self, 시작_장면):
+        pass
+
+    def 다음_장면(self, 장면_이름):
+        pass
+
+    def 서막_장면(self):
+        pass
+
+
+게임_지도 = 지도('central_corridor')
+게임_엔진 = 엔진(게임_지도)
+게임_엔진.플레이()
 

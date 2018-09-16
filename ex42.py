@@ -1,76 +1,76 @@
-## Animal 은 object의 일종(is-a)이다 (네, 조금 헷갈리죠) look at the extra credit
-class Animal(object):
+## 동물 은 object의 일종(is-a)이다 (네, 조금 헷갈리죠) 추가 점수 문제가 있습니다
+class 동물(object):
     pass
 
 ## ??
-class Dog(Animal):
+class 개(동물):
 
-    def __init__(self, name):
+    def __init__(self, 이름):
         ## ??
-        self.name = name
+        self.이름 = 이름
 
 ## ??
-class Cat(Animal):
+class 고양이(동물):
 
-    def __init__(self, name):
+    def __init__(self, 이름):
         ## ??
-        self.name = name
+        self.이름 = 이름
 
 ## ??
-class Person(object):
+class 사람(object):
 
-    def __init__(self, name):
+    def __init__(self, 이름):
         ## ??
-        self.name = name
+        self.이름 = 이름
 
-        ## Person은 어떤 종류의 pet을 갖고(has-a) 있다
-        self.pet = None
+        ## 사람은 어떤 종류의 애완동물을 갖고(has-a) 있다
+        self.애완동물 = None
 
 ## ??
-class Employee(Person):
+class 노동자(사람):
 
-    def __init__(self, name, salary):
-        ## ?? 음 이 마법은 뭐죠?
-        super(Employee, self).__init__(name)
+    def __init__(self, 이름, 월급):
+        ## ?? 음 이 외계어는 뭐죠?
+        super(노동자, self).__init__(이름)
         ## ??
-        self.salary = salary
+        self.월급 = 월급
 
 ## ??
-class Fish(object):
+class 물고기(object):
     pass
 
 ## ??
-class Salmon(Fish):
+class 연어(물고기):
     pass
 
 ##??
-class Halibut(Fish):
+class 대서양연어(물고기):
     pass
 
 
-## rover 는 Dog 의 일종(is-a) 이다
-rover = Dog("Rover")
+## 나그네 는 개 의 일종(is-a) 이다
+나그네 = 개("나그네")
 
 ## ??
-satan = Cat("Satan")
+악마 = 고양이("악마")
 
 ## ??
-mary = Person("Mary")
+영희 = 사람("영희")
 
 ## ??
-mary.pet = satan
+영희.애완동물 = 악마
 
 ## ??
-frank = Employee("Frank", 120000)
+철수 = 노동자("철수", 120000)
 
 ## ??
-frank.pet = rover
+철수.애완동물 = 나그네
 
 ## ??
-flipper = Fish()
+팔딱이 = 물고기()
 
 ## ??
-crouse = Salmon()
+동구 = 연어()
 
 ## ??
-harry = Halibut()
+하루 = 대서양연어()

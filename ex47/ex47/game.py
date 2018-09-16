@@ -1,5 +1,3 @@
-
-
 class 방(object):
 
     def __init__(self, 이름, 설명):
@@ -12,5 +10,3 @@ class 방(object):
 
     def 길_추가(self, 길들):
         self.길들.update(길들)
-
-

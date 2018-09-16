@@ -13,7 +13,7 @@ config = {
     'install_requires': ['pytest'],
     'packages': ['NAME'],
     'scripts': [],
-    'name': '프로젝트이름'
+    'name': 'ProjectName', # 한글을 쓸 수 없습니다
 }
 
 setup(**config)
