@@ -10,15 +10,3 @@ print(formatter.format(
     "하지만 '노래'하진 않아요.",
     "그러니까 잘 자요."
 ))
-
-
-# let's see issue #4
-'''
-formatter2 = "%r %r %r %r"
-print formatter2 % (
-    "I had this thing.",
-    "That you could type up right.",
-    "But it didn't sing.",
-    "So I said goodnight."
-)
-'''

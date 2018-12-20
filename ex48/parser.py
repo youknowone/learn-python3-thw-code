@@ -6,7 +6,7 @@ class 구문분석기_오류(Exception):
 class 문장(object):
 
     def __init__(self, 주어, 목적어, 동사):
-        # remember we take ('명사','공주') tuples and convert them
+        # 실행인자로 ('명사','공주') 같은 튜플을 받아 변환합니다
         self.주어 = 주어[1]
         self.목적어 = 목적어[1]
         self.동사 = 동사[1]

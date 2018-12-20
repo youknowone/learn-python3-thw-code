@@ -17,11 +17,11 @@ def test_verbs():
 
 
 def test_stops():
-    assert lexicon.스캔("the") == [('stop', 'the')]
-    결과 = lexicon.스캔("the in of")
-    assert 결과 == [('stop', 'the'),
-                    ('stop', 'in'),
-                    ('stop', 'of')]
+    assert lexicon.스캔("그") == [('제외', '그')]
+    결과 = lexicon.스캔("이 그 저")
+    assert 결과 == [('제외', '이'),
+                    ('제외', '그'),
+                    ('제외', '저')]
 
 
 def test_nouns():

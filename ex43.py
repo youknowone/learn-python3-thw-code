@@ -9,7 +9,7 @@ from textwrap import dedent
 
 ### @export "scene_class"
 
-class Scene(object):
+class 장면(object):
 
     def 입장(self):
         print("아직 만들지 않은 장면입니다.")
@@ -34,7 +34,7 @@ class 엔진(object):
         현재_장면.입장()
 
 ### @export "death_scene"
-class 사망(Scene):
+class 사망(장면):
 
     입담들 = [
         "사망. 진짜 못하네요.",
@@ -50,7 +50,7 @@ class 사망(Scene):
         exit(1)
 
 ### @export "center_corridor"
-class 중앙_복도(Scene):
+class 중앙_복도(장면):
 
     def 입장(self):
         print(dedent("""
@@ -107,7 +107,7 @@ class 중앙_복도(Scene):
             return '중앙_복도'
 
 ### @export "game_scenes"
-class 레이저_무기고(Scene):
+class 레이저_무기고(장면):
 
     def 입장(self):
         print(dedent("""
@@ -147,7 +147,7 @@ class 레이저_무기고(Scene):
             return '사망'
 
 
-class 함교(Scene):
+class 함교(장면):
 
     def 입장(self):
         print(dedent("""
@@ -191,7 +191,7 @@ class 함교(Scene):
             return "함교"
 
 
-class 구명정(Scene):
+class 구명정(장면):
 
     def 입장(self):
         print(dedent("""
@@ -227,7 +227,7 @@ class 구명정(Scene):
             return '끝'
 
 
-class 끝(Scene):
+class 끝(장면):
 
     def 입장(self):
         print("승리했습니다! 잘 했어요.")
