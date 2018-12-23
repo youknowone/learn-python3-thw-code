@@ -19,7 +19,7 @@ print("진행하려면 리턴 키를 누르세요.")
 input("?")
 
 print("파일 여는 중...")
-목적지 = open(파일_이름, 'w')
+목적지 = open(파일_이름, 'w', encoding='utf-8')
 
 print("파일 내용을 지웁니다.  안녕히!")
 목적지.truncate()

@@ -11,7 +11,7 @@ def 되감기(파일):
 def 한_줄_출력(줄_수, 파일):
     print(줄_수, 파일.readline())
 
-현재_파일 = open(입력_파일)
+현재_파일 = open(입력_파일, encoding='utf-8')
 
 print("파일 전체를 출력해 봅시다.\n")
 
